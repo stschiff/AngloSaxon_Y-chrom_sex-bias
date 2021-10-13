@@ -28,3 +28,16 @@ admixed_inds_j %>%
   dplyr::rename(aut_CNE_fraction = aCNE, hap_CNE_fraction = x2) %>%
   ggplot() + geom_point(aes(aut_CNE_fraction, hap_CNE_fraction)) +
   geom_abline(slope = 1) + xlim(0, 1) + ylim(0, 1)
+
+
+male_adm_prop <- function(alpha, beta) {
+  beta * alpha / (beta * alpha + (1 - beta) * (1 - alpha))
+}
+
+tidyr::expand_grid(alpha = seq(0, 1, 0.1), beta = seq(0.1, 0.9, 0.1)) %>%
+  dplyr::mutate(prop = male_adm_prop(alpha, beta)) %>%
+  ggplot() +
+    geom_line(aes(alpha, prop, col=beta, group = beta)) +
+    xlim(c(0, 1)) + ylim(c(0, 1))
+
+                                       

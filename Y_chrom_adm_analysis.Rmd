@@ -8,6 +8,8 @@ library(magrittr)
 library(ggplot2)
 ```
 
+# Visualising Y haplogroup frequencies and CNE admixture proportions
+
 Read in data from two tables. One giving all the Y haplogroups of the male samples, and one giving the autosomal CNE admixture estimate per individual (Email to David on Sep 29).
 
 ```{r}
@@ -42,29 +44,111 @@ source2_inds <- datj %>% dplyr::filter(aCNE > 0.98 | Population == "NorthSea_EMA
 We can now get the haplogroup frequencies in the two sources:
 ```{r}
 source1_haps <- source1_inds %>% dplyr::group_by(Haplogroup) %>% dplyr::summarise(n1 = dplyr::n())
+N1 <- sum(source1_haps$n1)
 source2_haps <- source2_inds %>% dplyr::group_by(Haplogroup) %>% dplyr::summarise(n2 = dplyr::n())
+N2 <- sum(source2_haps$n2)
 source_haps <- dplyr::full_join(source1_haps, source2_haps, by="Haplogroup") %>%
   tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
-  dplyr::mutate(n = n1 + n2, x1 = n1 / n, x2 = n2 / n)
+  dplyr::mutate(x1 = n1 / N1, x2 = n2 / N2, post_prob2 = x2 / (x1 + x2))
 source_haps
 ```
-
-... which we then join with the admixed individuals:
+where the last column `post_prob2` gives a rough estimate for the probability of a haplogroup to come from source2. We can join this table with the admixed individuals:
 
 ```{r}
-admixed_inds_j <- admixed_inds %>% dplyr::left_join(source_haps, by="Haplogroup")
+admixed_inds_j <- admixed_inds %>% dplyr::left_join(source_haps, by="Haplogroup") %>% tidyr::drop_na()
+admixed_inds_j
 ```
 
-We can now plot each individua's autosomal CNE admixture estimate together with the frequency of his haplogroup in the CNE source:
+We can now plot each individua's autosomal CNE admixture estimate together with estimate of his haplogroup coming from source 2:
 
 ```{r}
 admixed_inds_j %>%
-  dplyr::rename(aut_CNE_fraction = aCNE, hap_CNE_fraction = x2) %>%
-  ggplot() + geom_point(aes(aut_CNE_fraction, hap_CNE_fraction)) +
-  geom_abline(slope = 1) + xlim(0, 1) + ylim(0, 1)
+  ggplot() + geom_point(aes(aCNE, post_prob2)) +
+  geom_abline(slope = 1, linetype="dashed") + xlim(0, 1) + ylim(0, 1)
 ```
 
-Here is a first and quick interpretation: Admixed individuals tend to sample a CNE Y chromosome haplogroup with a higher frequency than would be expected given their autosomal CNE admixture estimate. This is evident from the clear bias of points above the line. I would carefully interpret this as potential sex bias.
+Here is a first and quick interpretation: Admixed individuals tend to carry Y chromosome haplogroups that have an overprortionally higher chance to come from the CNE group, indicating some amount of sex-bias to me.
 
 Can we make this more statistically sound?
 
+# Modelling Sex-bias
+
+We set up a model with two parameters:
+
+The first parameter, $\alpha$, determines the amount of CNE ancestry in his or her family tree. The second parameter, $\beta$ determines the proportion of males in the CNE pool, with $1-\beta$ being the proportion of males in the local (WBI-related) group. 
+
+This leads to a simple calculation of male immigrant ancestry over total male ancestry, $\gamma$:
+
+$$
+\gamma(\alpha, \beta) = \frac{\beta \alpha}{\beta \alpha + (1 - \beta) (1 - \alpha)}
+$$
+
+```{r}
+male_adm_prop <- function(alpha, beta) {
+  beta * alpha / (beta * alpha + (1 - beta) * (1 - alpha))
+}
+```
+
+We can visualise this model as follows:
+
+```{r}
+tidyr::expand_grid(alpha = seq(0, 1, 0.1), beta = seq(0.1, 0.9, 0.1)) %>%
+  dplyr::mutate(prop = male_adm_prop(alpha, beta)) %>%
+  ggplot() +
+    geom_line(aes(alpha, prop, col=beta, group = beta)) +
+    xlim(c(0, 1)) + ylim(c(0, 1))
+```
+which shows that values of $\beta$ different from 0.5 can increase or decrease the male admixture proportion and deviate the curve from a model without sex-bias (a straight line). 
+
+In order to estimate $\beta$ from the data, we need to have an likelihood model. The core component is the probability to draw a specific Y chromosome haplotype given the known CNE proportion $\alpha$ and a given $\beta$ proportion, as well as the number of times $n_1$ and $n_2$ that haplogroup is seen in the two source groups, and the total number of haplogroups I know in the source groups, $N_1$ and $N_2$:
+
+$$
+p(\text{Y-hap}|\alpha, \beta, n_1, N_1, n_2, N_2)
+$$
+## A simple binomial model:
+
+A simple approach would simply be a single random draw with probability $x_2=n_2/N_2$ with probability $\gamma$ and $x_1 = n_1 / N_1$ with probability $1-\gamma$:
+
+$$
+p(\text{Y-hap}|\alpha, \beta, n_1, N_1, n_2, N_2) = \gamma(\alpha, \beta) \frac{n_2 + 1}{N_2 + 1} + (1 - \gamma(\alpha, \beta)) \frac{n_1 + 1}{N_1 + 1}
+$$
+
+where, in order to avoid zero probabilities for haplogroups that we have not seen in a source, we have added a pseudo-count of 1 for each observed haplogroup.
+
+
+```{r}
+bin_likelihood_part <- function(alpha, beta, n1, N1, n2, N2) {
+  male_adm_prop(alpha, beta) * (n2 + 1) / (N2 + 1) + (1 - male_adm_prop(alpha, beta)) * (n1 + 1) / (N1 + 1)
+}
+```
+
+We can now compute the log-likelihood as a sum over all male admixed individuals
+
+```{r}
+bin_log_likelihood <- function(data, beta, N1, N2) {
+  sum(log(bin_likelihood_part(data$aCNE, beta, data$n1, N1, data$n2, N2)))
+}
+```
+
+We know N1 and N2 of course. These are simply:
+```{r}
+N1 <- sum(source1_haps$n1)
+N2 <- sum(source2_haps$n2)
+c(N1, N2)
+```
+
+We can now compute a log likelihood of the data given various values of beta:
+```{r}
+tibble::tibble(beta = seq(0.1, 0.9, 0.1)) %>%
+  dplyr::mutate(log_l = purrr::map_dbl(beta, ~ bin_log_likelihood(admixed_inds_j, .x, N1, N2)))
+```
+
+which has its lowest value around 0.6, which we can plot:
+
+```{r}
+model_plot_dat <- tibble::tibble(alpha=seq(0, 1, 0.01)) %>% dplyr::mutate(male_prop = male_adm_prop(alpha, 0.6))
+admixed_inds_j %>%
+  ggplot() + geom_point(aes(aCNE, post_prob2)) +
+    geom_line(data = model_plot_dat, aes(x = alpha, y = male_prop)) +
+    geom_abline(slope = 1, linetype="dashed") + xlim(0, 1) + ylim(0, 1)
+```
