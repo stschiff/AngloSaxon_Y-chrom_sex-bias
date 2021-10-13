@@ -1,0 +1,763 @@
+ID	GroupID	Population	Country	Reduced
+VK69.SG	Denmark_EarlyViking.SG	NorthSea_EMA	Denmark	H2
+VK70.SG	Denmark_EarlyViking.SG	NorthSea_EMA	Denmark	H7
+VK296.SG	Denmark_EarlyViking.SG	NorthSea_EMA	Denmark	HV
+VK297.SG	Denmark_EarlyViking.SG	NorthSea_EMA	Denmark	J1c
+VK71.SG	Denmark_EarlyViking.SG	NorthSea_EMA	Denmark	U5a
+VK65.SG	Denmark_EarlyViking.SG	NorthSea_EMA	Denmark	V25
+VK213.SG	Denmark_IA.SG	NorthSea_EMA	Denmark	H1
+VK521.SG	Denmark_IA.SG	NorthSea_EMA	Denmark	H16
+VK582.SG	Denmark_IA.SG	NorthSea_EMA	Denmark	H6
+VK532.SG	Denmark_IA.SG	NorthSea_EMA	Denmark	U2
+VK275.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H
+VK247.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H10
+VK280.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H11
+VK312.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H13
+VK369.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK371.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK411.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK141.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK313.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK319.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK340.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK92.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H1
+VK368.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H26
+VK300.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H3
+VK330.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H3
+VK329.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H3
+VK90.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H3
+VK288.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H3
+VK384.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H3
+VK364.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H3
+VK282.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H4
+VK383.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H5
+VK327.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H6
+VK314.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H6
+VK285.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H7
+VK370.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	H7
+VK276.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	HV
+VK290.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	I1
+VK279.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	I4
+VK367.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1b
+VK286.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1c
+VK292.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1c
+VK215.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1c
+VK216.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1c
+VK84.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1c
+VK139.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1c
+VK284.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J1c
+VK366.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J2a
+VK289.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J2b
+VK373.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	J2b
+VK316.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	K1a
+VK133.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	K1a
+VK322.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	K1a
+VK87.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	K1c
+VK323.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	K2a
+VK324.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	N1a
+VK301.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	R0
+VK295.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	T1
+VK315.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	T1
+VK281.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	T2
+VK287.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	T2b
+VK274.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	T2b
+VK138.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	T2b
+VK445.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U3
+VK363.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U4
+VK385.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U4
+VK320.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK446.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK298.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK372.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK291.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK94.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK294.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK328.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK278.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5a
+VK326.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5b
+VK325.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U5b
+VK365.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	U8
+VK362.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	V7
+VK338.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	W3
+VK361.SG	Denmark_Viking.SG	NorthSea_EMA	Denmark	X2
+VK140.SG	Denmark_Viking_lc.SG	NorthSea_EMA	Denmark	H27
+VK135.SG	Denmark_Viking_lc.SG	NorthSea_EMA	Denmark	H6
+VK318.SG	Denmark_Viking_lc.SG	NorthSea_EMA	Denmark	K1b
+VK86.SG	Denmark_Viking_lc.SG	NorthSea_EMA	Denmark	T1
+VK339.SG	Denmark_Viking_lc.SG	NorthSea_EMA	Denmark	T2a
+VK317.SG	Denmark_Viking_o1.SG	NorthSea_EMA	Denmark	H2
+VK134.SG	Denmark_Viking_o2.SG	NorthSea_EMA	Denmark	H1
+I6775	England_BellBeaker	England_PreEMA	England	H1
+I2452	England_BellBeaker	England_PreEMA	England	H1
+I6679	England_BellBeaker	England_PreEMA	England	J1c
+I5512	England_BellBeaker	England_PreEMA	England	J1c
+I2450	England_BellBeaker	England_PreEMA	England	K1a
+I2447	England_BellBeaker	England_PreEMA	England	K1a
+I6778	England_BellBeaker	England_PreEMA	England	K1a
+I2418	England_BellBeaker	England_PreEMA	England	K1a
+I4951	England_BellBeaker	England_PreEMA	England	K1b
+I2453	England_BellBeaker	England_PreEMA	England	K2a
+I3255	England_BellBeaker	England_PreEMA	England	T2b
+I3256	England_BellBeaker	England_PreEMA	England	T2b
+I5382	England_BellBeaker	England_PreEMA	England	T2b
+I2443	England_BellBeaker	England_PreEMA	England	T2c
+I2455	England_BellBeaker	England_PreEMA	England	U5a
+I4950	England_BellBeaker	England_PreEMA	England	U5a
+I1770	England_BellBeaker	England_PreEMA	England	U5b
+I5513	England_BellBeaker	England_PreEMA	England	V
+I2445	England_BellBeaker	England_PreEMA	England	X2
+I2416	England_BellBeaker_highEEF	England_PreEMA	England	K1b
+I1765_d	England_BellBeaker_lc	England_PreEMA	England	N1a
+I6774	England_BellBeaker_lowEEF	England_PreEMA	England	H4
+I5376	England_BellBeaker_lowEEF	England_PreEMA	England	H6
+I2417	England_BellBeaker_lowEEF	England_PreEMA	England	J1c
+I2454	England_BellBeaker_lowEEF	England_PreEMA	England	R1a
+I2459	England_BellBeaker_lowEEF	England_PreEMA	England	T2a
+I6680	England_BellBeaker_mediumEEF	England_PreEMA	England	H1
+I5379	England_BellBeaker_mediumEEF	England_PreEMA	England	HV
+I1767	England_BellBeaker_mediumEEF	England_PreEMA	England	U5a
+I2446_published	England_BellBeaker_mediumEEF_published	England_PreEMA	England	K1b
+I2565_published	England_BellBeaker_published_lc	England_PreEMA	England	W1
+I7573	England_C_EBA	England_PreEMA	England	H1
+I5441	England_C_EBA	England_PreEMA	England	H1
+I2618	England_C_EBA	England_PreEMA	England	H1
+I7635	England_C_EBA	England_PreEMA	England	H1
+I2604	England_C_EBA	England_PreEMA	England	H2
+I2461	England_C_EBA	England_PreEMA	England	H5
+I2464	England_C_EBA	England_PreEMA	England	I2
+I2457	England_C_EBA	England_PreEMA	England	I4
+I2463	England_C_EBA	England_PreEMA	England	J1c
+I7569	England_C_EBA	England_PreEMA	England	K1a
+I2566	England_C_EBA	England_PreEMA	England	K1b
+I2609	England_C_EBA	England_PreEMA	England	K2a
+I2460	England_C_EBA	England_PreEMA	England	T2a
+I5377	England_C_EBA	England_PreEMA	England	T2b
+I7570	England_C_EBA	England_PreEMA	England	T2b
+I2610	England_C_EBA	England_PreEMA	England	U2
+I6777	England_C_EBA	England_PreEMA	England	U4
+I7639	England_C_EBA	England_PreEMA	England	U5a
+I2421	England_C_EBA	England_PreEMA	England	U5a
+I7630	England_C_EBA	England_PreEMA	England	U5a
+I2601	England_C_EBA	England_PreEMA	England	U5a
+I2597	England_C_EBA	England_PreEMA	England	U5a
+I2602	England_C_EBA	England_PreEMA	England	U5b
+I2612	England_C_EBA	England_PreEMA	England	U5b
+I7638	England_C_EBA	England_PreEMA	England	V10
+I2600	England_C_EBA_daughter.I2457	England_PreEMA	England	U5b
+I2462	England_C_EBA_highEEF	England_PreEMA	England	U5a
+I5373	England_C_EBA_lowEEF	England_PreEMA	England	X2
+I2596	England_C_EBA_lowEEF_father.or.son.I2597	England_PreEMA	England	J1c
+I2598_published	England_C_EBA_published	England_PreEMA	England	H
+NO3423.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	H1
+I0777.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	H1
+I0773.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	H1
+I0161.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	H2
+I0157.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	H2
+I0159.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	K1a
+I0774.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	T2a
+I0769.SG	England_EarlyMedieval_Saxon.SG	England_EMA	England	U5a
+I0160.SG	England_IA.SG	England_PreEMA	England	H1
+I0789.SG	England_IA.SG	England_PreEMA	England	H1
+I0156.SG	England_IA_ERoman.SG	England_PreEMA	England	K1a
+M1489.SG	England_IA_o.SG	England_PreEMA	England	U2
+6DT22.SG	England_IA_Roman.SG	England_PreEMA	England	H
+6DT18.SG	England_IA_Roman.SG	England_PreEMA	England	H1
+3DT16.SG	England_IA_Roman.SG	England_PreEMA	England	H6
+6DT23.SG	England_IA_Roman.SG	England_PreEMA	England	H6
+6DT3.SG	England_IA_Roman.SG	England_PreEMA	England	J1b
+6DT21.SG	England_IA_Roman.SG	England_PreEMA	England	J1c
+3DT26.SG	England_IA_Roman_oMiddleEast.SG	England_PreEMA	England	H5
+I7576	England_LBA	England_PreEMA	England	J1c
+I7628	England_LBA	England_PreEMA	England	T1
+I7575	England_LBA	England_PreEMA	England	U5a
+I7578	England_LBA	England_PreEMA	England	U5a
+I5383	England_LBA_lowEEF	England_PreEMA	England	J1c
+I7580	England_LBA_lowEEF	England_PreEMA	England	U5b
+I7572	England_MBA	England_PreEMA	England	H13
+I7574	England_MBA	England_PreEMA	England	H1
+I3082	England_MBA	England_PreEMA	England	H1
+I7571	England_MBA	England_PreEMA	England	J1c
+I7626	England_MBA	England_PreEMA	England	T2b
+I2639	England_MBA	England_PreEMA	England	T2e
+I7627	England_MBA	England_PreEMA	England	U4
+I7577	England_MBA	England_PreEMA	England	U5a
+I7640	England_MBA	England_PreEMA	England	U5a
+I7568	England_MBA	England_PreEMA	England	W1
+I2458	England_MBA_highEEF	England_PreEMA	England	U5b
+I7579	England_MBA_sister.I1780	England_PreEMA	England	U5b
+rath3.SG	Ireland_EBA.SG	Britan_PreEMA	Ireland	J2b
+rath1.SG	Ireland_EBA.SG	Britan_PreEMA	Ireland	U5a
+rath2.SG	Ireland_EBA.SG	Britan_PreEMA	Ireland	U5b
+VK523.SG	Norway_IA.SG	Scandinavia_EMA	Norway	I1
+VK391.SG	Norway_IA.SG	Scandinavia_EMA	Norway	I3
+VK418.SG	Norway_IA.SG	Scandinavia_EMA	Norway	J1c
+VK390.SG	Norway_IA.SG	Scandinavia_EMA	Norway	K2a
+VK124.SG	Norway_Medieval.SG	Scandinavia_EMA	Norway	H10
+VK117.SG	Norway_Medieval.SG	Scandinavia_EMA	Norway	H1
+VK118.SG	Norway_Medieval.SG	Scandinavia_EMA	Norway	H1
+VK114.SG	Norway_Medieval.SG	Scandinavia_EMA	Norway	R1a
+VK116.SG	Norway_Medieval_lc.SG	Scandinavia_EMA	Norway	U6
+VK113.SG	Norway_Medieval_o.SG	Scandinavia_EMA	Norway	J1b
+VK125.SG	Norway_Medieval_o_lc.SG	Scandinavia_EMA	Norway	U3
+VK548.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	A
+VK394.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H13
+VK392.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H1
+VK515.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H52
+VK448.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H5
+VK414.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H6
+VK415.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H6
+VK516.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H6
+VK529.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H7
+VK417.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	H7
+VK519.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	HV
+VK524.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	HV
+VK420.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	I4
+VK386.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	J1b
+VK422.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	J1b
+VK388.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	J1c
+VK526.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	J2b
+VK528.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	K1a
+VK514.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	K2b
+VK389.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	T2b
+VK387.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	U5a
+VK525.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	U5a
+VK419.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	U5b
+VK520.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	U5b
+VK421.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	U5b
+VK393.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	U8
+VK547.SG	Norway_Viking.SG	Scandinavia_EMA	Norway	V
+VK518.SG	Norway_Viking_o1.SG	Scandinavia_EMA	Norway	U5b
+VK530.SG	Norway_Viking_o2.SG	Scandinavia_EMA	Norway	H1
+I5385	Scotland_BellBeaker	Britan_PreEMA	Scotland	H5
+I5367	Scotland_BellBeaker	Britan_PreEMA	Scotland	V10
+I5515	Scotland_C_EBA	Britan_PreEMA	Scotland	H3
+I2981	Scotland_C_EBA	Britan_PreEMA	Scotland	T2a
+I3132	Scotland_C_EBA	Britan_PreEMA	Scotland	T2a
+I5516	Scotland_C_EBA	Britan_PreEMA	Scotland	T2a
+I2567	Scotland_C_EBA	Britan_PreEMA	Scotland	U4
+I5469	Scotland_C_EBA_lc	Britan_PreEMA	Scotland	H5
+I2568	Scotland_C_EBA_mediumhighEEF	Britan_PreEMA	Scotland	U5a
+I5471_published	Scotland_C_EBA_mediumhighEEF_published	Britan_PreEMA	Scotland	H1
+I2569_published	Scotland_C_EBA_published	Britan_PreEMA	Scotland	K1a
+I5470_published	Scotland_C_EBA_published_lc	Britan_PreEMA	Scotland	H15
+I5473_published	Scotland_C_EBA_published_lc	Britan_PreEMA	Scotland	U5b
+I2860	Scotland_LBA	Britan_PreEMA	Scotland	H5
+I2861	Scotland_LBA	Britan_PreEMA	Scotland	I2
+I2859	Scotland_LBA	Britan_PreEMA	Scotland	K1a
+I3130	Scotland_LBA	Britan_PreEMA	Scotland	U5a
+I2656_published_d	Scotland_LBA_published	Britan_PreEMA	Scotland	H2
+I2653	Scotland_MBA	Britan_PreEMA	Scotland	H2
+I2573	Scotland_MBA	Britan_PreEMA	Scotland	H3
+I2655	Scotland_MBA	Britan_PreEMA	Scotland	H6
+I2654	Scotland_MBA	Britan_PreEMA	Scotland	U5b
+VK382.SG	Sweden_EarlyViking.SG	Scandinavia_EMA	Sweden	H3
+VK379.SG	Sweden_EarlyViking.SG	Scandinavia_EMA	Sweden	U3
+VK359.SG	Sweden_EarlyViking_lc.SG	Scandinavia_EMA	Sweden	H1
+RISE174.SG	Sweden_IA.SG	Scandinavia_EMA	Sweden	W1
+VK579.SG	Sweden_IA_1.SG	Scandinavia_EMA	Sweden	H1
+VK522.SG	Sweden_IA_2.SG	Scandinavia_EMA	Sweden	H1
+vik_grt035.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H
+VK438.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK464.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK50.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK400.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK48.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H10
+VK265.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H13
+VK472.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H13
+VK60.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H13
+vik_grt036.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H13
+VK306.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H15
+VK475.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK468.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK479.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+vik_gtm127.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+vik_urm045.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+vik_84005.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+vik_kls001.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK398.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK477.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK463.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK308.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK407.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK269.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK353.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK462.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK349.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK471.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK478.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+vik_urm160.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H1
+VK380.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H27
+VK342.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+VK354.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+VK431.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+vik_urm035.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+VK333.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+vik_84001.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+VK346.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+VK401.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H2
+VK469.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H3
+VK343.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H3
+VK350.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H3
+VK345.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H4
+VK399.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H4
+vik_bns023.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H4
+vik_gtm021.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H5
+VK433.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H5
+VK63.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H56
+VK352.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H64
+VK56.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H6
+VK429.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H70
+VK461.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H7
+VK453.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	H8
+VK34.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	HV
+VK454.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	HV
+VK53.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	HV
+VK64.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I1
+VK458.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I1
+VK456.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I1
+VK460.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I3
+VK31.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I4
+VK58.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I4
+VK457.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I5
+VK397.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1b
+VK432.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1b
+VK217.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1b
+VK441.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+VK450.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+vik_97029.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+vik_stg026.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+VK344.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+VK396.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+VK527.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+VK57.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1c
+VK474.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	I1d
+vik_stg021.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J1d
+vik_97002.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J2a
+VK402.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J2a
+VK108.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J2b
+VK357.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	J2b
+VK444.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1a
+VK405.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1a
+VK427.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1a
+VK33.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1a
+VK406.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1a
+VK403.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1a
+VK428.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1a
+VK309.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1b
+VK335.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1b
+VK268.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K1c
+VK336.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K2a
+VK424.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	K2b
+VK232.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	N1a
+VK473.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	N1a
+vik_urm161.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T1
+VK40.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T1a
+VK430.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T1a
+vik_nuf002.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T1a
+VK435.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T1a
+VK303.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2a
+VK452.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK440.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK42.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK332.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK347.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK348.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK29.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK267.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK39.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2b
+VK35.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	T2f
+VK442.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U2
+VK358.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U3
+VK425.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U3
+VK270.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U4
+VK404.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U4
+VK439.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U4
+VK337.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5a
+vik_97026.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5a
+VK334.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5a
+VK455.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5a
+VK355.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5b
+VK30.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5b
+VK251.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5b
+VK51.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5b
+VK434.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5b
+VK443.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U5b
+VK426.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	U6
+VK266.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	V
+VK437.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	V
+VK459.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	W3
+VK476.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	X2
+VK395.SG	Sweden_Viking.SG	Scandinavia_EMA	Sweden	X2
+vik_84035.SG	Sweden_Viking_fail.due.to.high.heterozygosity.SG	Scandinavia_EMA	Sweden	H2
+VK467.SG	Sweden_Viking_lc.SG	Scandinavia_EMA	Sweden	H1
+VK304.SG	Sweden_Viking_lc.SG	Scandinavia_EMA	Sweden	K1a
+vik_2072.SG	Sweden_Viking_lc.SG	Scandinavia_EMA	Sweden	U
+VK517.SG	Sweden_Viking_o1.SG	Scandinavia_EMA	Sweden	J1c
+vik_stg020.SG	Sweden_Viking_o1.SG	Scandinavia_EMA	Sweden	T2
+vik_kal009.SG	Sweden_Viking_o1.SG	Scandinavia_EMA	Sweden	T2f
+vik_KAL006.SG	Sweden_Viking_o1.SG	Scandinavia_EMA	Sweden	V7
+VK533.SG	Sweden_Viking_o2.SG	Scandinavia_EMA	Sweden	H13
+I1775	Wales_C_EBA	Britan_PreEMA	Scotland	I3
+I5364	Wales_MBA_contam	Britan_PreEMA	Scotland	H5
+I2574_published	Wales_MBA_published	Britan_PreEMA	Scotland	U5a
+SED004	Sedgeford	England_EMA	England	H
+KIL047	Kilteasheen	Ireland_EMA	Ireland	H
+ADN014	Anderten	NorthSea_EMA	NGermany	H
+I16510	Wolverton	England_EMA	England	H
+ADN012	Anderten	NorthSea_EMA	NGermany	H
+KIL018	Kilteasheen	Ireland_EMA	Ireland	H1
+DUN002	Dunum	NorthSea_EMA	NGermany	H1
+MDM006	Midlum	NorthSea_EMA	Netherlands	H1
+I20677	West Heslerton	England_EMA	England	H1
+I20644	West Heslerton	England_EMA	England	H1
+I20645	West Heslerton	England_EMA	England	H1
+LAK016	Lakenheath	England_EMA	England	H1
+OAI016	Oakington	England_EMA	England	H1
+I20602	West Chichester, Apple Down	England_EMA	England	H1
+I20638	West Heslerton	England_EMA	England	H1
+SED009	Sedgeford	England_EMA	England	H10
+KPN012	Kopenhagen	NorthSea_EMA	Denmark	H10
+I20660	West Heslerton	England_EMA	England	H10
+HAD008	Hatherdene	England_EMA	England	H11
+SWG014	Schleswig	NorthSea_EMA	NGermany	H11
+I11571	Worth Matravers	England_EMA	England	H11
+POH003	Polhill	England_EMA	England	H11
+DRU003	Drantum	NorthSea_EMA	NGermany	H11
+KIL037	Kilteasheen	Ireland_EMA	Ireland	H13
+IND006	Alt-Inden	NorthSea_EMA	WGermany	H13
+KIL013	Kilteasheen	Ireland_EMA	Ireland	H13
+HID002.A	Hiddestorf	NorthSea_EMA	NGermany	H15
+DRU014	Drantum	NorthSea_EMA	NGermany	H17
+OAI009	Oakington	England_EMA	England	H18
+I17268	Norton Bishops Mill	England_EMA	England	H1
+SED007	Sedgeford	England_EMA	England	H1
+SWG007	Schleswig	NorthSea_EMA	NGermany	H1
+GRO001	Groningen	NorthSea_EMA	Netherlands	H1
+I20650	West Heslerton	England_EMA	England	H1
+I20598	West Chichester, Apple Down	England_EMA	England	H1
+ADN013	Anderten	NorthSea_EMA	NGermany	H1
+I3011	Lincoln, Lincoln Castle	England_EMA	England	H1
+I20641	West Heslerton	England_EMA	England	H1
+I16389	Newquay, Crantock	England_EMA	England	H1
+I20601	West Chichester, Apple Down	England_EMA	England	H1
+DUN010	Dunum	NorthSea_EMA	NGermany	H1
+KIL035	Kilteasheen	Ireland_EMA	Ireland	H1
+KPN007	Kopenhagen	NorthSea_EMA	Denmark	H1
+I11585	West Heslerton	England_EMA	England	H1
+I0772	Oakington	England_EMA	England	H1
+SED018	Sedgeford	England_EMA	England	H1
+ELY002	Ely	England_EMA	England	H1
+I11576	Worth Matravers	England_EMA	England	H1
+I11578	Worth Matravers	England_EMA	England	H1
+DRU017	Drantum	NorthSea_EMA	NGermany	H1
+SED019	Sedgeford	England_EMA	England	H1
+I11583	West Heslerton	England_EMA	England	H1
+SWG010	Schleswig	NorthSea_EMA	NGermany	H1
+I17273	Norton Bishops Mill	England_EMA	England	H1
+DUN007	Dunum	NorthSea_EMA	NGermany	H1
+ADN015	Anderten	NorthSea_EMA	NGermany	H1
+I11577	Worth Matravers	England_EMA	England	H1
+SED008	Sedgeford	England_EMA	England	H1
+KIL017	Kilteasheen	Ireland_EMA	Ireland	H1
+I11584	West Heslerton	England_EMA	England	H1
+LAK004	Lakenheath	England_EMA	England	H23
+OAI010	Oakington	England_EMA	England	H24
+POH004	Polhill	England_EMA	England	H24
+ELY006	Ely	England_EMA	England	H26
+KPN004	Kopenhagen	NorthSea_EMA	Denmark	H2
+LAK001	Lakenheath	England_EMA	England	H2
+IND008	Alt-Inden	NorthSea_EMA	WGermany	H2
+DRU012	Drantum	NorthSea_EMA	NGermany	H2
+SWG009	Schleswig	NorthSea_EMA	NGermany	H2
+HAD013	Hatherdene	England_EMA	England	H2
+POH006	Polhill	England_EMA	England	H3
+EAS004	Eastry	England_EMA	England	H3
+KPN003	Kopenhagen	NorthSea_EMA	Denmark	H31
+DRU015	Drantum	NorthSea_EMA	NGermany	H31
+DRU018	Drantum	NorthSea_EMA	NGermany	H31
+ADN008	Anderten	NorthSea_EMA	NGermany	H3
+KIL034	Kilteasheen	Ireland_EMA	Ireland	H3
+KIL003	Kilteasheen	Ireland_EMA	Ireland	H3
+IND013	Alt-Inden	NorthSea_EMA	WGermany	H3
+GRO024	Groningen	NorthSea_EMA	Netherlands	H3
+I16392	Clapdale, Fox Holes Cave	England_EMA	England	H3
+KPN008	Kopenhagen	NorthSea_EMA	Denmark	H3
+IND015	Alt-Inden	NorthSea_EMA	WGermany	H3
+KPN001	Kopenhagen	NorthSea_EMA	Denmark	H3
+HAD017	Hatherdene	England_EMA	England	H4
+OAI008	Oakington	England_EMA	England	H4
+I3045	Lincoln, Lincoln Castle	England_EMA	England	H4
+I0763	Oakington	England_EMA	England	H4
+KIL006	Kilteasheen	Ireland_EMA	Ireland	H4
+DRU005	Drantum	NorthSea_EMA	NGermany	H4
+SED003	Sedgeford	England_EMA	England	H5
+I17272	Norton Bishops Mill	England_EMA	England	H5
+DRU007	Drantum	NorthSea_EMA	NGermany	H51
+ADN001	Anderten	NorthSea_EMA	NGermany	H56
+DUN013	Dunum	NorthSea_EMA	NGermany	H58
+I20639	West Heslerton	England_EMA	England	H59
+MDM001	Midlum	NorthSea_EMA	Netherlands	H5
+SED005	Sedgeford	England_EMA	England	H5
+SWG008	Schleswig	NorthSea_EMA	NGermany	H5
+LAK008	Lakenheath	England_EMA	England	H5
+OAI003	Oakington	England_EMA	England	H5
+I0765	Oakington	England_EMA	England	H5
+I17271	Norton Bishops Mill	England_EMA	England	H5
+I14541	Bishopstone, Rookery Hill	England_EMA	England	H5
+MDM007	Midlum	NorthSea_EMA	Netherlands	H5
+I20597	West Chichester, Apple Down	England_EMA	England	H5
+SED014	Sedgeford	England_EMA	England	H5
+I11581	Worth Matravers	England_EMA	England	H5
+ADN004	Anderten	NorthSea_EMA	NGermany	H5
+KPN011	Kopenhagen	NorthSea_EMA	Denmark	H6
+SRS004	Schortens	NorthSea_EMA	NGermany	H6
+LAK007	Lakenheath	England_EMA	England	H6
+I20669	West Heslerton	England_EMA	England	H6
+I20667	West Heslerton	England_EMA	England	H6
+I20643	West Heslerton	England_EMA	England	H7
+SWG012	Schleswig	NorthSea_EMA	NGermany	H7
+KIL027	Kilteasheen	Ireland_EMA	Ireland	H7
+I16385	Newquay, Crantock	England_EMA	England	H7
+IND010	Alt-Inden	NorthSea_EMA	WGermany	H8
+KPN014	Kopenhagen	NorthSea_EMA	Denmark	HV
+DRU001	Drantum	NorthSea_EMA	NGermany	HV
+HAD006	Hatherdene	England_EMA	England	HV
+HAD012	Hatherdene	England_EMA	England	HV
+I11574	Worth Matravers	England_EMA	England	HV
+I11573	Worth Matravers	England_EMA	England	HV
+I20636	Worth Matravers	England_EMA	England	HV
+I11575	Worth Matravers	England_EMA	England	HV
+ELY003	Ely	England_EMA	England	HV
+OAI002	Oakington	England_EMA	England	HV
+KPN002	Kopenhagen	NorthSea_EMA	Denmark	HV
+I20608	West Chichester, Apple Down	England_EMA	England	I1
+I20672	West Heslerton	England_EMA	England	I1
+EAS005	Eastry	England_EMA	England	I2
+KIL043	Kilteasheen	Ireland_EMA	Ireland	I2
+KPN010	Kopenhagen	NorthSea_EMA	Denmark	I2
+OAI012	Oakington	England_EMA	England	I2
+I0531	Teeside, Norton	England_EMA	England	I2
+KPN013	Kopenhagen	NorthSea_EMA	Denmark	I2
+I14539	Bishopstone, Rookery Hill	England_EMA	England	I3
+EAS006	Eastry	England_EMA	England	I4
+KIL038	Kilteasheen	Ireland_EMA	Ireland	I4
+I20656	West Heslerton	England_EMA	England	I4
+KIL042	Kilteasheen	Ireland_EMA	Ireland	J1
+GRO017	Groningen	NorthSea_EMA	Netherlands	J1b
+ADN006	Anderten	NorthSea_EMA	NGermany	J1b
+I17270	Norton Bishops Mill	England_EMA	England	J1b
+KIL016	Kilteasheen	Ireland_EMA	Ireland	J1c
+GRO021	Groningen	NorthSea_EMA	Netherlands	J1c
+KIL014	Kilteasheen	Ireland_EMA	Ireland	J1c
+SED012	Sedgeford	England_EMA	England	J1c
+I20637	Worth Matravers	England_EMA	England	J1c
+I0764	Oakington	England_EMA	England	J1c
+I20671	West Heslerton	England_EMA	England	J1c
+ELY001	Ely	England_EMA	England	J1c
+HAD003	Hatherdene	England_EMA	England	J1c
+LAK013	Lakenheath	England_EMA	England	J1c
+GRO004	Groningen	NorthSea_EMA	Netherlands	J1c
+LAK002	Lakenheath	England_EMA	England	J1c
+I20659	West Heslerton	England_EMA	England	J1c
+MDM002	Midlum	NorthSea_EMA	Netherlands	J1c
+I14534	Bishopstone, Rookery Hill	England_EMA	England	J1c
+POH001	Polhill	England_EMA	England	J1c
+KIL024	Kilteasheen	Ireland_EMA	Ireland	J1c
+I20666	West Heslerton	England_EMA	England	J1c
+LAK010	Lakenheath	England_EMA	England	J1c
+LAK015	Lakenheath	England_EMA	England	J1c
+I16508	Wolverton	England_EMA	England	J1c
+HAD002	Hatherdene	England_EMA	England	J1c
+HAD016	Hatherdene	England_EMA	England	J1c
+KIL023	Kilteasheen	Ireland_EMA	Ireland	J2a
+SWG002	Schleswig	NorthSea_EMA	NGermany	J2a
+OAI001	Oakington	England_EMA	England	J2a
+POH008	Polhill	England_EMA	England	J2a
+GRO010	Groningen	NorthSea_EMA	Netherlands	J2a
+GRO014	Groningen	NorthSea_EMA	Netherlands	J2a
+GRO015	Groningen	NorthSea_EMA	Netherlands	J2a
+GRO016	Groningen	NorthSea_EMA	Netherlands	J2a
+GRO020	Groningen	NorthSea_EMA	Netherlands	J2a
+I0775	Oakington	England_EMA	England	J2a
+I17269	Norton Bishops Mill	England_EMA	England	J2a
+OAI007	Oakington	England_EMA	England	J2a
+I0767	Oakington	England_EMA	England	J2a
+IND007	Alt-Inden	NorthSea_EMA	WGermany	J2b
+SWG011	Schleswig	NorthSea_EMA	NGermany	J2b
+GRO008	Groningen	NorthSea_EMA	Netherlands	J2b
+DUN006	Dunum	NorthSea_EMA	NGermany	J2b
+DRU011	Drantum	NorthSea_EMA	NGermany	K
+SED015	Sedgeford	England_EMA	England	K1a
+DRU006	Drantum	NorthSea_EMA	NGermany	K1a
+SWG005	Schleswig	NorthSea_EMA	NGermany	K1a
+POH002	Polhill	England_EMA	England	K1a
+LAK009	Lakenheath	England_EMA	England	K1a
+LAK014	Lakenheath	England_EMA	England	K1a
+I11567	Worth Matravers	England_EMA	England	K1a
+I11568	Worth Matravers	England_EMA	England	K1a
+KIL009	Kilteasheen	Ireland_EMA	Ireland	K1a
+KIL033	Kilteasheen	Ireland_EMA	Ireland	K1a
+ZET002	Zetel	NorthSea_EMA	NGermany	K1a
+I17275	Norton Bishops Mill	England_EMA	England	K1a
+I20642	West Heslerton	England_EMA	England	K1a
+I11590	West Heslerton	England_EMA	England	K1a
+ADN011	Anderten	NorthSea_EMA	NGermany	K1a
+HAD014	Hatherdene	England_EMA	England	K1a
+DRU009	Drantum	NorthSea_EMA	NGermany	K1a
+HID004	Hiddestorf	NorthSea_EMA	NGermany	K1a
+DRU013	Drantum	NorthSea_EMA	NGermany	K1a
+GRO019	Groningen	NorthSea_EMA	Netherlands	K1a
+I20607	West Chichester, Apple Down	England_EMA	England	K1a
+SWG004	Schleswig	NorthSea_EMA	NGermany	K1b
+HAD007	Hatherdene	England_EMA	England	K1c
+LAK006	Lakenheath	England_EMA	England	K1c
+KIL019	Kilteasheen	Ireland_EMA	Ireland	K1c
+SWG003	Schleswig	NorthSea_EMA	NGermany	K1c
+I20653	West Heslerton	England_EMA	England	K1c
+I14536	Bishopstone, Rookery Hill	England_EMA	England	K1c
+POH005	Polhill	England_EMA	England	K1d
+I11588	West Heslerton	England_EMA	England	K1d
+DRU010	Drantum	NorthSea_EMA	NGermany	K2a
+HAD011	Hatherdene	England_EMA	England	K2a
+MDM004	Midlum	NorthSea_EMA	Netherlands	K2a
+I17277	Hartlepool, Olive Street	England_EMA	England	K2a
+I20652	West Heslerton	England_EMA	England	K2a
+KIL028	Kilteasheen	Ireland_EMA	Ireland	K2b
+I0766	Oakington	England_EMA	England	K2b
+I0768	Oakington	England_EMA	England	K2b
+OAI004	Oakington	England_EMA	England	K2b
+I14538	Bishopstone, Rookery Hill	England_EMA	England	K2b
+ADN003	Anderten	NorthSea_EMA	NGermany	H2
+ADN005	Anderten	NorthSea_EMA	NGermany	H2
+ADN009	Anderten	NorthSea_EMA	NGermany	H2
+DUN009	Dunum	NorthSea_EMA	NGermany	H3
+I5372_d	Folkestone, Dover Hill	England_EMA	England	R
+IND009	Alt-Inden	NorthSea_EMA	WGermany	R0
+SRS003	Schortens	NorthSea_EMA	NGermany	T1a
+GRO013	Groningen	NorthSea_EMA	Netherlands	T1a
+I20654	West Heslerton	England_EMA	England	T1a
+SED011	Sedgeford	England_EMA	England	T2
+IND014	Alt-Inden	NorthSea_EMA	WGermany	T2
+I14533	Bishopstone, Rookery Hill	England_EMA	England	T2
+OAI011	Oakington	England_EMA	England	T2
+I20680	West Heslerton	England_EMA	England	T2
+I11569	Worth Matravers	England_EMA	England	T2a
+I11582	Worth Matravers	England_EMA	England	T2a
+I11580	Worth Matravers	England_EMA	England	T2a
+HAD009	Hatherdene	England_EMA	England	T2b
+LAK005	Lakenheath	England_EMA	England	T2b
+KIL026	Kilteasheen	Ireland_EMA	Ireland	T2b
+DRU008	Drantum	NorthSea_EMA	NGermany	T2b
+IND003	Alt-Inden	NorthSea_EMA	WGermany	T2b
+GRO006	Groningen	NorthSea_EMA	Netherlands	T2b
+I20603	West Chichester, Apple Down	England_EMA	England	T2b
+KIL001	Kilteasheen	Ireland_EMA	Ireland	T2b
+GRO012	Groningen	NorthSea_EMA	Netherlands	T2b
+SED010	Sedgeford	England_EMA	England	T2b
+HAD005	Hatherdene	England_EMA	England	T2b
+SED017	Sedgeford	England_EMA	England	T2b
+KIL007	Kilteasheen	Ireland_EMA	Ireland	T2b
+HAD015	Hatherdene	England_EMA	England	T2b
+I20670	West Heslerton	England_EMA	England	T2b
+I11589	West Heslerton	England_EMA	England	T2b
+HID003	Hiddestorf	NorthSea_EMA	NGermany	T2b
+I20658	West Heslerton	England_EMA	England	T2b
+LAK011	Lakenheath	England_EMA	England	T2b
+I20655	West Heslerton	England_EMA	England	T2b
+I20661	West Heslerton	England_EMA	England	T2b
+KPN006	Kopenhagen	NorthSea_EMA	Denmark	T2b
+GRO023	Groningen	NorthSea_EMA	Netherlands	T2b
+I20605	West Chichester, Apple Down	England_EMA	England	T2c
+KIL031	Kilteasheen	Ireland_EMA	Ireland	T2e
+ISS002	Issendorf	NorthSea_EMA	NGermany	T2e
+I17274	Norton Bishops Mill	England_EMA	England	T2e
+I0792	Oakington	England_EMA	England	T2f
+IND016	Alt-Inden	NorthSea_EMA	WGermany	T2f
+I20674	West Heslerton	England_EMA	England	T2f
+I20673	West Heslerton	England_EMA	England	T2f
+I20646	West Heslerton	England_EMA	England	T2f
+IND005	Alt-Inden	NorthSea_EMA	WGermany	T2g
+KIL002	Kilteasheen	Ireland_EMA	Ireland	U1
+LAK003	Lakenheath	England_EMA	England	U2
+DRU002	Drantum	NorthSea_EMA	NGermany	U2
+KPN005	Kopenhagen	NorthSea_EMA	Denmark	U2
+DUN001	Dunum	NorthSea_EMA	NGermany	U2
+I20649	West Heslerton	England_EMA	England	U2
+SED016	Sedgeford	England_EMA	England	U3
+DRU016	Drantum	NorthSea_EMA	NGermany	U3
+IND017	Alt-Inden	NorthSea_EMA	WGermany	U3
+KIL032	Kilteasheen	Ireland_EMA	Ireland	U4
+MDM005	Midlum	NorthSea_EMA	Netherlands	U4
+KIL008	Kilteasheen	Ireland_EMA	Ireland	U4
+I3044	Lincoln, Lincoln Castle	England_EMA	England	U4
+OAI013	Oakington	England_EMA	England	U4
+POH009	Polhill	England_EMA	England	U4
+DUN011	Dunum	NorthSea_EMA	NGermany	U4
+KIL022	Kilteasheen	Ireland_EMA	Ireland	U4
+HAD001	Hatherdene	England_EMA	England	U4
+KIL025	Kilteasheen	Ireland_EMA	Ireland	U5a
+ELY004	Ely	England_EMA	England	U5a
+ELY005	Ely	England_EMA	England	U5a
+KIL030	Kilteasheen	Ireland_EMA	Ireland	U5a
+I20640	West Heslerton	England_EMA	England	U5a
+I11587	West Heslerton	England_EMA	England	U5a
+I0771	Oakington	England_EMA	England	U5a
+SWG001	Schleswig	NorthSea_EMA	NGermany	U5a
+I20678	West Heslerton	England_EMA	England	U5a
+SWG006	Schleswig	NorthSea_EMA	NGermany	U5a
+KIL004	Kilteasheen	Ireland_EMA	Ireland	U5a
+I17276	Norton Bishops Mill	England_EMA	England	U5a
+KIL045	Kilteasheen	Ireland_EMA	Ireland	U5a
+GRO002	Groningen	NorthSea_EMA	Netherlands	U5a
+I16383	Bude, Widemouth Bay	England_EMA	England	U5a
+HAD010	Hatherdene	England_EMA	England	U5a
+I20676	West Heslerton	England_EMA	England	U5a
+ADN002	Anderten	NorthSea_EMA	NGermany	U5a
+I3056	Ribblesdale, Selside Grike	England_EMA	England	U5a
+I20600	West Chichester, Apple Down	England_EMA	England	U5a
+IND011	Alt-Inden	NorthSea_EMA	WGermany	U5b
+IND012	Alt-Inden	NorthSea_EMA	WGermany	U5b
+I11570	Worth Matravers	England_EMA	England	U5b
+GRO005	Groningen	NorthSea_EMA	Netherlands	U5b
+I14535	Bishopstone, Rookery Hill	England_EMA	England	U5b
+EAS001	Eastry	England_EMA	England	U5b
+EAS002	Eastry	England_EMA	England	U5b
+EAS003	Eastry	England_EMA	England	U5b
+DRU004	Drantum	NorthSea_EMA	NGermany	U5b
+IND001	Alt-Inden	NorthSea_EMA	WGermany	U5b
+SED013	Sedgeford	England_EMA	England	U5b
+I16509	Wolverton	England_EMA	England	U5b
+OAI005	Oakington	England_EMA	England	U5b
+MDM003	Midlum	NorthSea_EMA	Netherlands	U5b
+I11579	Worth Matravers	England_EMA	England	U5b
+KIL044	Kilteasheen	Ireland_EMA	Ireland	U5b
+GRO007	Groningen	NorthSea_EMA	Netherlands	U7
+SWG013	Schleswig	NorthSea_EMA	NGermany	U8
+I0790	Linton	England_EMA	England	U8
+I0791	Linton	England_EMA	England	U8
+IND004	Alt-Inden	NorthSea_EMA	WGermany	U8
+OAI015	Oakington	England_EMA	England	V
+SED020	Sedgeford	England_EMA	England	V
+SED021	Sedgeford	England_EMA	England	V
+ADN007	Anderten	NorthSea_EMA	NGermany	V
+SWG015	Schleswig	NorthSea_EMA	NGermany	V
+I20668	West Heslerton	England_EMA	England	V
+HAD004	Hatherdene	England_EMA	England	V10
+KIL015	Kilteasheen	Ireland_EMA	Ireland	V10
+OAI017	Oakington	England_EMA	England	V1
+KIL020	Kilteasheen	Ireland_EMA	Ireland	V1
+POH007	Polhill	England_EMA	England	V2
+KIL012	Kilteasheen	Ireland_EMA	Ireland	V3
+LAK012	Lakenheath	England_EMA	England	V3
+KIL041	Kilteasheen	Ireland_EMA	Ireland	V3
+KPN015	Kopenhagen	NorthSea_EMA	Denmark	V3
+IND002	Alt-Inden	NorthSea_EMA	WGermany	V3
+I3037	Wolverton	England_EMA	England	W
+ADN016	Anderten	NorthSea_EMA	NGermany	W
+KPN009	Kopenhagen	NorthSea_EMA	Denmark	W
+I14542	Bishopstone, Rookery Hill	England_EMA	England	W
+DUN005	Dunum	NorthSea_EMA	NGermany	X
+I20679	West Heslerton	England_EMA	England	X2
+OAI006	Oakington	England_EMA	England	X2
+I11586	West Heslerton	England_EMA	England	X2
+I14540	Bishopstone, Rookery Hill	England_EMA	England	X2
