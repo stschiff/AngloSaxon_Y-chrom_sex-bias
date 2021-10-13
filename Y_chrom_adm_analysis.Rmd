@@ -1,0 +1,70 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r include=FALSE}
+library(magrittr)
+library(ggplot2)
+```
+
+Read in data from two tables. One giving all the Y haplogroups of the male samples, and one giving the autosomal CNE admixture estimate per individual (Email to David on Sep 29).
+
+```{r}
+dat1 <- readxl::read_excel("ForFrequencies_Stephan.xlsx", range = readxl::cell_cols("A:D"))
+cne_admix_rates <- readxl::read_excel("SexBias_Table_forDavid.xlsx") %>%
+  dplyr::rename(aCNE = `aCNE autosomes`) %>%
+  dplyr::select(Individual, aCNE)
+```
+
+We can easily join the two:
+```{r}
+datj <- dat1 %>% dplyr::left_join(cne_admix_rates, by=c("ID" = "Individual"))
+```
+
+Here are the numbers per group:
+```{r}
+datj %>% dplyr::group_by(Population) %>% dplyr::summarise(n = dplyr::n())
+```
+
+We now declare three groups of samples. First, a group of admixed individuals from England_EMA:
+```{r}
+admixed_inds <- datj %>% dplyr::filter(aCNE > 0.02 & aCNE < 0.98)
+```
+
+and then two source groups:
+```{r}
+source1_inds <- datj %>%
+  dplyr::filter(Population %in% c("Britain_PreEMA", "England_PreEMA") | aCNE < 0.02)
+source2_inds <- datj %>% dplyr::filter(aCNE > 0.98 | Population == "NorthSea_EMA")
+```
+
+We can now get the haplogroup frequencies in the two sources:
+```{r}
+source1_haps <- source1_inds %>% dplyr::group_by(Haplogroup) %>% dplyr::summarise(n1 = dplyr::n())
+source2_haps <- source2_inds %>% dplyr::group_by(Haplogroup) %>% dplyr::summarise(n2 = dplyr::n())
+source_haps <- dplyr::full_join(source1_haps, source2_haps, by="Haplogroup") %>%
+  tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
+  dplyr::mutate(n = n1 + n2, x1 = n1 / n, x2 = n2 / n)
+source_haps
+```
+
+... which we then join with the admixed individuals:
+
+```{r}
+admixed_inds_j <- admixed_inds %>% dplyr::left_join(source_haps, by="Haplogroup")
+```
+
+We can now plot each individua's autosomal CNE admixture estimate together with the frequency of his haplogroup in the CNE source:
+
+```{r}
+admixed_inds_j %>%
+  dplyr::rename(aut_CNE_fraction = aCNE, hap_CNE_fraction = x2) %>%
+  ggplot() + geom_point(aes(aut_CNE_fraction, hap_CNE_fraction)) +
+  geom_abline(slope = 1) + xlim(0, 1) + ylim(0, 1)
+```
+
+Here is a first and quick interpretation: Admixed individuals tend to sample a CNE Y chromosome haplogroup with a higher frequency than would be expected given their autosomal CNE admixture estimate. This is evident from the clear bias of points above the line. I would carefully interpret this as potential sex bias.
+
+Can we make this more statistically sound?
+
