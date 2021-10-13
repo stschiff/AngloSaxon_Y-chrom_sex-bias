@@ -105,7 +105,8 @@ In order to estimate $\beta$ from the data, we need to have an likelihood model.
 $$
 p(\text{Y-hap}|\alpha, \beta, n_1, N_1, n_2, N_2)
 $$
-## A simple binomial model:
+
+## A simple binomial model
 
 A simple approach would simply be a single random draw with probability $x_2=n_2/N_2$ with probability $\gamma$ and $x_1 = n_1 / N_1$ with probability $1-\gamma$:
 
@@ -143,12 +144,43 @@ tibble::tibble(beta = seq(0.1, 0.9, 0.1)) %>%
   dplyr::mutate(log_l = purrr::map_dbl(beta, ~ bin_log_likelihood(admixed_inds_j, .x, N1, N2)))
 ```
 
-which has its lowest value around 0.6, which we can plot:
+which has its lowest value around 0.6, We can estimate the maximum numerically:
 
 ```{r}
-model_plot_dat <- tibble::tibble(alpha=seq(0, 1, 0.01)) %>% dplyr::mutate(male_prop = male_adm_prop(alpha, 0.6))
+optimize(function(beta) bin_log_likelihood(admixed_inds_j, beta, N1, N2), c(0.01, 0.99), maximum = TRUE)
+```
+
+So 0.64 indeed. We can plot that model together with our frequency-based estimates:
+
+```{r}
+model_plot_dat <- tibble::tibble(alpha=seq(0, 1, 0.01)) %>% dplyr::mutate(male_prop = male_adm_prop(alpha, 0.64))
 admixed_inds_j %>%
   ggplot() + geom_point(aes(aCNE, post_prob2)) +
     geom_line(data = model_plot_dat, aes(x = alpha, y = male_prop)) +
     geom_abline(slope = 1, linetype="dashed") + xlim(0, 1) + ylim(0, 1)
 ```
+
+## A more accurate model respecting the noise:
+
+One issue with the binomial model is the fact that we don't take into account that some haplogroups have quite low occurrence numbers in the data, so contain noise over the actual haplogroup frequencies. We can model that, by assuming that the true haplogroup frequency is actually unknown. Assuming a flat prior, the posterior distribution for the frequency given observed counts $n$ and $N$ is a Beta distribution with parameters $n+1$ and $N+1$. The sampling distribution from that beta is then a beta-binomial distribution.
+
+```{r}
+beta_bin_draw <- function(n, N) {
+  beta(1 + n, )
+}
+betabin_likelihood_part <- function(alpha, beta, n1, N1, n2, N2) {
+  male_adm_prop(alpha, beta) * rmutil::dbetabinom(1, 1, n1 / N1, N1) +
+  (1 - male_adm_prop(alpha, beta)) * rmutil::dbetabinom(1, 1, n2 / N2, N2)
+}
+```
+
+We can now compute the log-likelihood as a sum over all male admixed individuals
+
+```{r}
+bin_log_likelihood <- function(data, beta, N1, N2) {
+  sum(log(bin_likelihood_part(data$aCNE, beta, data$n1, N1, data$n2, N2)))
+}
+```
+
+
+
