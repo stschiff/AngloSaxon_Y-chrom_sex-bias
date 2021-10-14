@@ -167,3 +167,32 @@ admixed_inds_j %>%
     geom_abline(slope = 1, linetype="dashed") + xlim(0, 1) + ylim(0, 1)
 ```
 
+We can visualise a posterior distribution by grid-computing across beta:
+
+```{r}
+ll_grid <- tibble::tibble(beta = seq(0.01, 0.99, 0.01)) %>%
+  dplyr::mutate(log_l = purrr::map_dbl(beta, ~ bin_log_likelihood(admixed_inds_j, .x, N1, N2)))
+```
+Let's get the maximum:
+
+```{r}
+m <- max(ll_grid$log_l)
+m
+```
+
+```{r}
+ll_grid_scaled <- ll_grid$log_l - m
+norm <- sum(exp(ll_grid_scaled))
+ll_grid_norm <- ll_grid %>% dplyr::mutate(post = exp(log_l - m) / norm)
+ll_grid_norm
+```
+
+```{r}
+ggplot(ll_grid_norm) + geom_line(aes(beta, post))
+```
+
+# Exploring different estimates for the admixture proportion
+
+
+
+
