@@ -1,10 +1,21 @@
 library(magrittr)
 library(ggplot2)
 
-dat1 <- readxl::read_excel("ForFrequencies_Stephan.xlsx", range = readxl::cell_cols("A:D"))
-cne_admix_rates <- readxl::read_excel("SexBias_Table_forDavid.xlsx") %>%
-  dplyr::rename(aCNE = `aCNE autosomes`) %>%
+dat1 <- readxl::read_excel("data/ForFrequencies_Stephan.xlsx", range = readxl::cell_cols("A:D"))
+cne_admix_rates <- readxl::read_excel("data/SexBias_Table_forDavid.xlsx") %>%
+  # dplyr::rename(aCNE = `aCNE autosomes`) %>%
+  dplyr::rename(aCNE = `CNE`) %>%
   dplyr::select(Individual, aCNE)
+
+readxl::read_excel("data/SexBias_Table_forDavid.xlsx") %>%
+  ggplot() + geom_point(aes(`aCNE autosomes`, CNE))
+
+
+cne_admix_rates_new <- readxl::read_excel("data/CNE_WBI.xlsx")
+
+cne_rates_joint <- cne_admix_rates %>% dplyr::left_join(cne_admix_rates_new, by=c("Individual" = "Ind"))
+
+cne_rates_joint %>% ggplot() + geom_point(aes(aCNE, CNE))
 
 datj <- dat1 %>% dplyr::left_join(cne_admix_rates, by=c("ID" = "Individual"))
 
