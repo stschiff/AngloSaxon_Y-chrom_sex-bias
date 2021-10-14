@@ -167,27 +167,3 @@ admixed_inds_j %>%
     geom_abline(slope = 1, linetype="dashed") + xlim(0, 1) + ylim(0, 1)
 ```
 
-## A more accurate model respecting the noise:
-
-One issue with the binomial model is the fact that we don't take into account that some haplogroups have quite low occurrence numbers in the data, so contain noise over the actual haplogroup frequencies. We can model that, by assuming that the true haplogroup frequency is actually unknown. Assuming a flat prior, the posterior distribution for the frequency given observed counts $n$ and $N$ is a Beta distribution with parameters $n+1$ and $N+1$. The sampling distribution from that beta is then a beta-binomial distribution.
-
-```{r}
-beta_bin_draw <- function(n, N) {
-  beta(1 + n, )
-}
-betabin_likelihood_part <- function(alpha, beta, n1, N1, n2, N2) {
-  male_adm_prop(alpha, beta) * rmutil::dbetabinom(1, 1, n1 / N1, N1) +
-  (1 - male_adm_prop(alpha, beta)) * rmutil::dbetabinom(1, 1, n2 / N2, N2)
-}
-```
-
-We can now compute the log-likelihood as a sum over all male admixed individuals
-
-```{r}
-bin_log_likelihood <- function(data, beta, N1, N2) {
-  sum(log(bin_likelihood_part(data$aCNE, beta, data$n1, N1, data$n2, N2)))
-}
-```
-
-
-
