@@ -233,6 +233,9 @@ optimize(function(beta) log_likelihood(admixed_inds_j, beta, N1, N2, adm_column 
          c(0.01, 0.99), maximum = TRUE)
 ```
 
+# Exploring different estimates for the admixture proportion
+
+
 
 ```{r}
 mesh <- tibble::tibble(
