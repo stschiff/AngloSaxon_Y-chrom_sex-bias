@@ -233,10 +233,6 @@ optimize(function(beta) log_likelihood(admixed_inds_j, beta, N1, N2, adm_column 
          c(0.01, 0.99), maximum = TRUE)
 ```
 
-# Exploring different estimates for the admixture proportion
-
-
-
 ```{r}
 mesh <- tibble::tibble(
   beta = seq(0, 1, 0.01),
@@ -254,4 +250,18 @@ which now is even leaning towards female sex-bias.
 
 We conclude that the Y haplotype data is not conclusive with respect to sex bias. In particular, both using ancient and modern reference populations for estimating autosomal admixture proportions yield posterior distributions which comfortably include values below and above $\beta=0.5$ providing no clear evidence for either male or female sex-bias.
 
+# Mitochondrial haplogroups
 
+```{r}
+source1_haps_mt <- source1_inds %>%
+  dplyr::group_by(HaplogroupMT) %>%
+  dplyr::summarise(n1 = dplyr::n())
+source2_haps_mt <- source2_inds %>%
+  dplyr::group_by(HaplogroupMT) %>%
+  dplyr::summarise(n2 = dplyr::n())
+source_haps_mt <- dplyr::full_join(source1_haps_mt, source2_haps_mt,
+                                   by="HaplogroupMT") %>%
+  tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
+  dplyr::mutate(source2_prob = source_prob(2, n1, N1, n2, N2))
+source_haps_mt
+```
