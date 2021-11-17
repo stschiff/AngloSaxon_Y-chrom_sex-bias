@@ -6,6 +6,7 @@ output: pdf_document
 ```{r include=FALSE}
 library(magrittr)
 library(ggplot2)
+source("defs.R")
 ```
 
 # Introduction
@@ -58,30 +59,7 @@ Next, we use this individual-based probability with Y chromosome haplogroups.
 # Visualising Y haplogroup frequencies and CNE admixture proportions
 
 ```{r include=FALSE}
-# We read in data from multiple sources, see data/README.txt for details
-dat1 <- readxl::read_excel("data/ForFrequencies_Stephan.xlsx", range = readxl::cell_cols("A:D")) %>%
-  dplyr::mutate(
-    Haplogroup = ifelse(stringr::str_starts(Haplogroup, "I2"), "I2", Haplogroup)
-  )
-cne_admix_rates_modernRefs <- readxl::read_excel("data/CNE_WBI.xlsx") %>%
-  dplyr::select(Ind, CNE)
-cne_admix_rates_ancientRefs <- readxl::read_excel("data/SexBias_Table_forDavid.xlsx") %>%
-  dplyr::rename(aCNE = `aCNE autosomes`) %>%
-  dplyr::select(Individual, aCNE) %>%
-  dplyr::rename(Ind = Individual)
-
-sites_tab <- readxl::read_excel("data/Haplogroups_CNE.xlsx") %>%
-  dplyr::select(ID, Locality, Sex)
-
-mtDat <- readr::read_tsv("data/mtDNA.txt", show_col_types = FALSE) %>%
-  dplyr::select(ID, Reduced) %>%
-  dplyr::rename(Ind = ID, HaplogroupMT = Reduced)
-
-datj <- dat1 %>%
-  dplyr::left_join(cne_admix_rates_modernRefs, by=c("ID" = "Ind")) %>%
-  dplyr::left_join(cne_admix_rates_ancientRefs, by=c("ID" = "Ind")) %>%
-  dplyr::left_join(mtDat, by=c("ID" = "Ind")) %>%
-  dplyr::left_join(sites_tab, by="ID") 
+datj <- load_joint_table()
 ```
 
 We consider data for `r nrow(datj)` individuals, grouped as follows:
@@ -91,29 +69,30 @@ datj %>% dplyr::group_by(Population) %>% dplyr::summarise(n = dplyr::n())
 
 We now declare three groups of samples. First, a group of admixed individuals from England_EMA, defined as individuals with CNE (continental North-European) admixture proportions between 2 and 98%:
 ```{r}
-admixed_inds <- datj %>% dplyr::filter(aCNE > 0.02 & aCNE < 0.98)
+admixed_inds <- datj %>% dplyr::filter(ancientCNE > 0.02 & ancientCNE < 0.98)
 ```
 
 and then two source groups: one consisting of individuals from Britain before the study period plus early medieval individuals with less than 2% CNE admixture (Source 1), and one consisting of individuals from Britain with more than 98% CNE ancestry and those sampled from across the North Sea (Source 2):
 ```{r}
 source1_inds <- datj %>%
-  dplyr::filter(Population %in% c("Britain_PreEMA", "England_PreEMA") | aCNE < 0.02)
-source2_inds <- datj %>% dplyr::filter(aCNE > 0.98 | Population == "NorthSea_EMA")
+  dplyr::filter(Population %in% c("Britain_PreEMA", "England_PreEMA") | ancientCNE < 0.02)
+source2_inds <- datj %>% dplyr::filter(ancientCNE > 0.98 | Population == "NorthSea_EMA")
 ```
 
 We can now get the haplogroup frequencies in the two sources, and compute the probability of that haplogroup to come from source 2:
 ```{r}
 source1_haps <- source1_inds %>%
-  dplyr::group_by(Haplogroup) %>%
+  dplyr::group_by(HaplogroupY) %>%
   dplyr::summarise(n1 = dplyr::n())
 N1 <- sum(source1_haps$n1)
 source2_haps <- source2_inds %>%
-  dplyr::group_by(Haplogroup) %>%
+  dplyr::group_by(HaplogroupY) %>%
   dplyr::summarise(n2 = dplyr::n())
 N2 <- sum(source2_haps$n2)
-source_haps <- dplyr::full_join(source1_haps, source2_haps, by="Haplogroup") %>%
+source_haps <- dplyr::full_join(source1_haps, source2_haps, by="HaplogroupY") %>%
   tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
-  dplyr::mutate(source2_prob = source_prob(2, n1, N1, n2, N2))
+  dplyr::mutate(source2_prob = source_prob(2, n1, N1, n2, N2)) %>%
+  dplyr::filter(!is.na(HaplogroupY))
 source_haps
 ```
 
@@ -123,10 +102,10 @@ We may have more hope of viewing these probabilities for all admixed individuals
 
 ```{r}
 admixed_inds_j <- admixed_inds %>%
-  dplyr::left_join(source_haps, by="Haplogroup") %>%
+  dplyr::left_join(source_haps, by="HaplogroupY") %>%
   tidyr::drop_na()
 admixed_inds_j %>%
-  ggplot() + geom_point(aes(aCNE, source2_prob)) + xlim(0, 1) + ylim(0, 1)
+  ggplot() + geom_point(aes(ancientCNE, source2_prob)) + xlim(0, 1) + ylim(0, 1)
 ```
 
 There is no obvious pattern to observe here, and we turn to more explicit modelling of sex bias
@@ -178,7 +157,7 @@ $$\log \mathcal{L}(\{H_k\}, \{\alpha_k\} | \beta, \mathbf{N}) = \sum_k \log p(H_
 where index $k$ runs over all individuals with haplotype $H_K$ and autosomal admixture estimate $\alpha_k$.
 
 ```{r}
-log_likelihood <- function(data, beta, N1, N2, adm_column = "aCNE") {
+log_likelihood <- function(data, beta, N1, N2, adm_column = "ancientCNE") {
   sum(log(likelihood_part(data[[adm_column]], beta, data$n1, N1, data$n2, N2)))
 }
 ```
@@ -202,7 +181,7 @@ So indeed 0.64. We can plot that model together with our frequency-based estimat
 model_plot_dat <- tibble::tibble(alpha=seq(0, 1, 0.01)) %>%
   dplyr::mutate(male_prop = male_adm_prop(alpha, 0.64))
 admixed_inds_j %>%
-  ggplot() + geom_point(aes(aCNE, source2_prob)) +
+  ggplot() + geom_point(aes(ancientCNE, source2_prob)) +
     geom_line(data = model_plot_dat, aes(x = alpha, y = male_prop)) +
     geom_abline(slope = 1, linetype="dashed") + xlim(0, 1) + ylim(0, 1)
 ```
@@ -229,7 +208,7 @@ We can now see that the posterior distribution for $\beta$ comfortably includes 
 For completeness, we can perform the same calculation using a different estimate of autosomal admixture, using modern reference panels, yielding the following maximum likelihood model:
 
 ```{r}
-optimize(function(beta) log_likelihood(admixed_inds_j, beta, N1, N2, adm_column = "CNE"),
+optimize(function(beta) log_likelihood(admixed_inds_j, beta, N1, N2, adm_column = "modernCNE"),
          c(0.01, 0.99), maximum = TRUE)
 ```
 
@@ -238,7 +217,7 @@ mesh <- tibble::tibble(
   beta = seq(0, 1, 0.01),
   likl = purrr::map_dbl(
     beta,
-    ~ exp(log_likelihood(admixed_inds_j, .x, N1, N2, adm_column = "CNE"))
+    ~ exp(log_likelihood(admixed_inds_j, .x, N1, N2, adm_column = "modernCNE"))
   )
 )
 norm <- sum(mesh$likl)
@@ -256,12 +235,53 @@ We conclude that the Y haplotype data is not conclusive with respect to sex bias
 source1_haps_mt <- source1_inds %>%
   dplyr::group_by(HaplogroupMT) %>%
   dplyr::summarise(n1 = dplyr::n())
+N1 <- sum(source1_haps_mt$n1)
 source2_haps_mt <- source2_inds %>%
   dplyr::group_by(HaplogroupMT) %>%
   dplyr::summarise(n2 = dplyr::n())
+N2 <- sum(source2_haps_mt$n2)
 source_haps_mt <- dplyr::full_join(source1_haps_mt, source2_haps_mt,
                                    by="HaplogroupMT") %>%
   tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
-  dplyr::mutate(source2_prob = source_prob(2, n1, N1, n2, N2))
+  dplyr::mutate(source2_prob = source_prob(2, n1, N1, n2, N2)) %>%
+  dplyr::filter(!is.na(HaplogroupMT))
 source_haps_mt
+```
+
+```{r}
+admixed_inds_j <- admixed_inds %>%
+  dplyr::left_join(source_haps_mt, by="HaplogroupMT") %>%
+  tidyr::drop_na()
+admixed_inds_j %>%
+  ggplot() + geom_point(aes(ancientCNE, source2_prob)) + xlim(0, 1) + ylim(0, 1)
+```
+with all probabilities around 50%, the MT data conveys almost no information at all about source origin.
+
+```{r}
+tibble::tibble(beta = seq(0, 1, 0.1)) %>%
+  dplyr::mutate(log_l = purrr::map_dbl(beta, ~ log_likelihood(admixed_inds_j, .x, N1, N2)))
+```
+
+
+```{r}
+mesh <- tibble::tibble(
+  beta = seq(0.01, 0.99, 0.01),
+  likl = purrr::map_dbl(beta, ~ exp(log_likelihood(admixed_inds_j, .x, N1, N2)))
+)
+norm <- sum(mesh$likl)
+mesh %>% dplyr::mutate(posterior = likl / norm) %>%
+  ggplot() + geom_area(aes(x = beta, y = posterior), alpha = 0.7)
+```
+
+```{r}
+mesh <- tibble::tibble(
+  beta = seq(0.01, 0.99, 0.01),
+  likl = purrr::map_dbl(
+    beta,
+    ~ exp(log_likelihood(admixed_inds_j, .x, N1, N2, adm_column = "modernCNE"))
+  )
+)
+norm <- sum(mesh$likl)
+mesh %>% dplyr::mutate(posterior = likl / norm) %>%
+  ggplot() + geom_area(aes(x = beta, y = posterior), alpha = 0.7)
 ```
