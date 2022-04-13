@@ -3,6 +3,7 @@ title: "Estimating sex-biased ancestry from uniparental markers in the presence 
 output: word_document
 ---
 
+
 ```{r include=FALSE}
 library(magrittr)
 library(ggplot2)
@@ -46,16 +47,24 @@ source_prob <- function(s, n1, N1, n2, N2) {
 
 
 ```{r include=FALSE}
-datj <- load_joint_table()
+datj <- load_data()
+```
+
+Here is a summary breakdown of the entire data into groups:
+```{r}
+datj %>% dplyr::group_by(Pop2) %>% dplyr::summarise(n = dplyr::n())
 ```
 
 We now declare three groups of samples. First, a group of admixed individuals from England_EMA, defined as individuals with CNE (continental North-European) admixture proportions between 2 and 98%. Then two source groups: one consisting of individuals from Britain before the study period plus early medieval individuals with less than 2% CNE admixture (Source 1), and one consisting of individuals from Britain with more than 98% CNE ancestry and those sampled from across the North Sea (Source 2).
 
 ```{r include=FALSE}
-admixed_inds <- datj %>% dplyr::filter(ancientCNE > 0.02 & ancientCNE < 0.98)
+admixed_inds <- datj %>% dplyr::filter(CNE > 0.02 & CNE < 0.98)
 source1_inds <- datj %>%
-  dplyr::filter(Population %in% c("Britain_PreEMA", "England_PreEMA") | ancientCNE < 0.02)
-source2_inds <- datj %>% dplyr::filter(ancientCNE > 0.98 | Population == "NorthSea_EMA")
+  dplyr::filter(Pop2 %in% c("England_BA", "England_IA", "Ireland_BA",
+                                  "Scotland_BA", "Scotland_IA", "Wales_BA",
+                                  "Wales_IA") | CNE < 0.02)
+source2_inds <- datj %>%
+  dplyr::filter(CNE > 0.98 | Pop2 == "NorthSea_MA")
 ```
 
 # Y chromosomes
@@ -63,17 +72,17 @@ source2_inds <- datj %>% dplyr::filter(ancientCNE > 0.98 | Population == "NorthS
 We can now get the Y haplogroup frequencies in the two sources, and compute the probability of that haplogroup to come from source 2:
 ```{r echo=FALSE}
 source1_haps <- source1_inds %>%
-  dplyr::group_by(HaplogroupY) %>%
+  dplyr::group_by(Y_1) %>%
   dplyr::summarise(n1 = dplyr::n())
 N1 <- sum(source1_haps$n1)
 source2_haps <- source2_inds %>%
-  dplyr::group_by(HaplogroupY) %>%
+  dplyr::group_by(Y_1) %>%
   dplyr::summarise(n2 = dplyr::n())
 N2 <- sum(source2_haps$n2)
-source_haps <- dplyr::full_join(source1_haps, source2_haps, by="HaplogroupY") %>%
+source_haps <- dplyr::full_join(source1_haps, source2_haps, by="Y_1") %>%
   tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
   dplyr::mutate(source2_prob = source_prob(2, n1, N1, n2, N2)) %>%
-  dplyr::filter(!is.na(HaplogroupY))
+  dplyr::filter(!is.na(Y_1))
 source_haps
 ```
 
@@ -81,10 +90,11 @@ None of the probabilities is lower than 5% or higher than 95%, suggesting that n
 
 ```{r echo=FALSE}
 admixed_inds_j <- admixed_inds %>%
-  dplyr::left_join(source_haps, by="HaplogroupY") %>%
+  dplyr::left_join(source_haps, by="Y_1") %>%
   tidyr::drop_na()
 admixed_inds_j %>%
-  ggplot() + geom_point(aes(ancientCNE, source2_prob)) + xlim(0, 1) + ylim(0, 1)
+  ggplot() + geom_point(aes(CNE, source2_prob)) + xlim(0, 1) + ylim(0, 1)
+ggsave("y_chrom_source2_probs.jpg")
 ```
 
 To understand this data, we set up a model with two parameters: The first parameter, $\alpha$, determines the amount of an individual's CNE ancestry (Source 2). The second parameter, $\beta$ determines the proportion of males within Source 2, with $1-\beta$ being the proportion of males within Source 1. Here is a schematic:
@@ -111,6 +121,7 @@ tidyr::expand_grid(alpha = seq(0, 1, 0.01), beta = seq(0.1, 0.9, 0.1)) %>%
   ggplot() +
     geom_line(aes(alpha, prop, col=beta, group = beta)) +
     xlim(c(0, 1)) + ylim(c(0, 1))
+ggsave("model_curves.jpg")
 ```
 
 which shows that values of $\beta$ different from 0.5 can increase or decrease the male admixture proportion and deviate the curve from a model without sex-bias (a straight line). 
@@ -133,8 +144,8 @@ $$\log \mathcal{L}(\{H_k\}, \{\alpha_k\} | \beta, \mathbf{N}) = \sum_k \log p(H_
 where index $k$ runs over all individuals with haplotype $H_K$ and autosomal admixture estimate $\alpha_k$.
 
 ```{r include=FALSE}
-log_likelihood <- function(data, beta, N1, N2, adm_column = "ancientCNE") {
-  sum(log(likelihood_part(data[[adm_column]], beta, data$n1, N1, data$n2, N2)))
+log_likelihood <- function(data, beta, N1, N2) {
+  sum(log(likelihood_part(data$CNE, beta, data$n1, N1, data$n2, N2)))
 }
 ```
 
@@ -151,9 +162,10 @@ We can plot that model together with our frequency-based estimates:
 model_plot_dat <- tibble::tibble(alpha=seq(0, 1, 0.01)) %>%
   dplyr::mutate(male_prop = male_adm_prop(alpha, 0.64))
 admixed_inds_j %>%
-  ggplot() + geom_point(aes(ancientCNE, source2_prob)) +
+  ggplot() + geom_point(aes(CNE, source2_prob)) +
     geom_line(data = model_plot_dat, aes(x = alpha, y = male_prop)) +
     geom_abline(slope = 1, linetype="dashed") + xlim(0, 1) + ylim(0, 1)
+ggsave("y_chrom_source2_fit.png")
 ```
 
 So this would suggest a moderate male sex-bias in the CNE ancestry. But how significant is this? We can use our likelihood model to compute a posterior probability density over $\beta$:
@@ -171,6 +183,7 @@ mesh <- tibble::tibble(
 norm <- sum(mesh$likl)
 mesh %>% dplyr::mutate(posterior = likl / norm) %>%
   ggplot() + geom_area(aes(x = beta, y = posterior), alpha = 0.7)
+ggsave("y_chrom_posterior.png")
 ```
 
 We can now see that the posterior distribution for $\beta$ comfortably includes the value $\beta=0.5$, which means that the 95% credibility interval includes values below and above 0.5, suggesting models of male as well as female sex-bias being consistent with the data. We conclude that the Y haplotype data is not conclusive with respect to sex bias. 
@@ -182,29 +195,31 @@ We can apply the same methodology to mitochondrial haplotypes, with the main dif
 We get a similar table of posterior probabilitites for every MT haplogroup coming from source 2:
 
 ```{r echo=FALSE}
+mtCol <- "mtDNA_simple"
 source1_haps_mt <- source1_inds %>%
-  dplyr::group_by(HaplogroupMT) %>%
+  dplyr::group_by(.data[[mtCol]]) %>%
   dplyr::summarise(n1 = dplyr::n())
 N1 <- sum(source1_haps_mt$n1)
 source2_haps_mt <- source2_inds %>%
-  dplyr::group_by(HaplogroupMT) %>%
+  dplyr::group_by(.data[[mtCol]]) %>%
   dplyr::summarise(n2 = dplyr::n())
 N2 <- sum(source2_haps_mt$n2)
 source_haps_mt <- dplyr::full_join(source1_haps_mt, source2_haps_mt,
-                                   by="HaplogroupMT") %>%
+                                   by=mtCol) %>%
   tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
   dplyr::mutate(source2_prob = source_prob(2, n1, N1, n2, N2)) %>%
-  dplyr::filter(!is.na(HaplogroupMT))
+  dplyr::filter(!is.na(.data[[mtCol]]))
 source_haps_mt
 ```
 
 which for our admixed individuals can be visualised again:
 ```{r echo=FALSE}
 admixed_inds_j <- admixed_inds %>%
-  dplyr::left_join(source_haps_mt, by="HaplogroupMT") %>%
+  dplyr::left_join(source_haps_mt, by=mtCol) %>%
   tidyr::drop_na()
 admixed_inds_j %>%
-  ggplot() + geom_point(aes(ancientCNE, source2_prob)) + xlim(0, 1) + ylim(0, 1)
+  ggplot() + geom_point(aes(CNE, source2_prob)) + xlim(0, 1) + ylim(0, 1)
+ggsave("mt_chrom_source2_probs.png")
 ```
 
 but with all probabilities around 50%, the MT data conveys almost no information at all about source origin, since haplogroup frequencies are too similar in the two source populations.
@@ -218,6 +233,7 @@ mesh <- tibble::tibble(
 norm <- sum(mesh$likl)
 mesh %>% dplyr::mutate(posterior = likl / norm) %>%
   ggplot() + geom_area(aes(x = beta, y = posterior), alpha = 0.7)
+ggsave("mt_posterior.png")
 ```
 
 which is even broader than the already insignificant results from the Y chromosomal haplogroups, again showing that the data is consistent with models of both female and male sex-bias.

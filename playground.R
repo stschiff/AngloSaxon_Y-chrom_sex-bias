@@ -1,54 +1,6 @@
 library(magrittr)
-library(ggplot2)
+source("analysis_04-2022/defs.R")
 
-dat1 <- readxl::read_excel("data/ForFrequencies_Stephan.xlsx", range = readxl::cell_cols("A:D"))
-cne_admix_rates <- readxl::read_excel("data/SexBias_Table_forDavid.xlsx") %>%
-  # dplyr::rename(aCNE = `aCNE autosomes`) %>%
-  dplyr::rename(aCNE = `CNE`) %>%
-  dplyr::select(Individual, aCNE)
+dat <- load_data()
 
-readxl::read_excel("data/SexBias_Table_forDavid.xlsx") %>%
-  ggplot() + geom_point(aes(`aCNE autosomes`, CNE))
-
-
-cne_admix_rates_new <- readxl::read_excel("data/CNE_WBI.xlsx")
-
-cne_rates_joint <- cne_admix_rates %>% dplyr::left_join(cne_admix_rates_new, by=c("Individual" = "Ind"))
-
-cne_rates_joint %>% ggplot() + geom_point(aes(aCNE, CNE))
-
-datj <- dat1 %>% dplyr::left_join(cne_admix_rates, by=c("ID" = "Individual"))
-
-# get the nums of inds per population
-datj %>% dplyr::group_by(Population) %>% dplyr::summarise(n = dplyr::n())
-
-admixed_inds <- datj %>% dplyr::filter(aCNE > 0.02 & aCNE < 0.98)
-source1_inds <- datj %>%
-  dplyr::filter(Population %in% c("Britain_PreEMA", "England_PreEMA") | aCNE < 0.02)
-source2_inds <- datj %>% dplyr::filter(aCNE > 0.98 | Population == "NorthSea_EMA")
-
-source1_haps <- source1_inds %>% dplyr::group_by(Haplogroup) %>% dplyr::summarise(n1 = dplyr::n())
-source2_haps <- source2_inds %>% dplyr::group_by(Haplogroup) %>% dplyr::summarise(n2 = dplyr::n())
-source_haps <- dplyr::full_join(source1_haps, source2_haps) %>%
-  tidyr::replace_na(list(n1 = 0, n2 = 0)) %>%
-  dplyr::mutate(n = n1 + n2, x1 = n1 / n, x2 = n2 / n)
-
-admixed_inds_j <- admixed_inds %>% dplyr::left_join(source_haps)
-
-admixed_inds_j %>%
-  dplyr::rename(aut_CNE_fraction = aCNE, hap_CNE_fraction = x2) %>%
-  ggplot() + geom_point(aes(aut_CNE_fraction, hap_CNE_fraction)) +
-  geom_abline(slope = 1) + xlim(0, 1) + ylim(0, 1)
-
-
-male_adm_prop <- function(alpha, beta) {
-  beta * alpha / (beta * alpha + (1 - beta) * (1 - alpha))
-}
-
-tidyr::expand_grid(alpha = seq(0, 1, 0.1), beta = seq(0.1, 0.9, 0.1)) %>%
-  dplyr::mutate(prop = male_adm_prop(alpha, beta)) %>%
-  ggplot() +
-    geom_line(aes(alpha, prop, col=beta, group = beta)) +
-    xlim(c(0, 1)) + ylim(c(0, 1))
-
-                                       
+dat %>% dplyr::group_by(Pop2) %>% dplyr::summarise(n = dplyr::n())
